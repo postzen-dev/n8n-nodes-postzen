@@ -1,0 +1,69 @@
+{
+	"name": "PostZen - Create and read a draft",
+	"nodes": [
+		{
+			"parameters": {},
+			"id": "manual",
+			"name": "Run Manually",
+			"type": "n8n-nodes-base.manualTrigger",
+			"typeVersion": 1,
+			"position": [0, 0]
+		},
+		{
+			"parameters": {
+				"resource": "post",
+				"operation": "create",
+				"postingMode": "draft",
+				"content": "My first PostZen draft from n8n",
+				"additionalFields": {
+					"title": "n8n test draft"
+				}
+			},
+			"id": "create",
+			"name": "Create Draft",
+			"type": "n8n-nodes-postzen.postzen",
+			"typeVersion": 1,
+			"position": [240, 0]
+		},
+		{
+			"parameters": {
+				"resource": "post",
+				"operation": "get",
+				"postId": "={{$json._id}}"
+			},
+			"id": "get",
+			"name": "Get Draft",
+			"type": "n8n-nodes-postzen.postzen",
+			"typeVersion": 1,
+			"position": [480, 0]
+		}
+	],
+	"connections": {
+		"Run Manually": {
+			"main": [
+				[
+					{
+						"node": "Create Draft",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		},
+		"Create Draft": {
+			"main": [
+				[
+					{
+						"node": "Get Draft",
+						"type": "main",
+						"index": 0
+					}
+				]
+			]
+		}
+	},
+	"settings": {
+		"executionOrder": "v1"
+	},
+	"active": false
+}

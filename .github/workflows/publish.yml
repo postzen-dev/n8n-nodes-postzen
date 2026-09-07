@@ -1,0 +1,34 @@
+name: Publish
+on:
+  push:
+    tags: ['[0-9]*.[0-9]*.[0-9]*']
+permissions:
+  contents: read
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      # Trusted publishing needs npm >=11.5.1. Pin a compatible major.
+      - run: npm install --global npm@11
+      - run: npm ci
+      - name: Check release tag matches package version
+        run: node -e 'if (process.env.GITHUB_REF_NAME !== require("./package.json").version) process.exit(1)'
+      - run: npm run lint
+      - run: npm test
+      # First publish: set NPM_TOKEN to a granular npm token with publish access.
+      # Later: configure npm Trusted Publishing for this repository/publish.yml,
+      # then remove NPM_TOKEN. Provenance is included with either auth method.
+      - name: Publish with provenance
+        run: npm publish --provenance --access public
+        env:
+          RELEASE_MODE: 'true'
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

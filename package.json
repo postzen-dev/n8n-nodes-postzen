@@ -1,0 +1,65 @@
+{
+  "name": "n8n-nodes-postzen",
+  "version": "0.1.0",
+  "description": "Create, schedule, and manage social media posts with PostZen",
+  "license": "MIT",
+  "homepage": "https://www.postzen.dev",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "author": {
+    "name": "Jesse Eisenbart",
+    "email": "jesseeisenbart@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JesseEisenbart/n8n-nodes-postzen.git"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "dev": "n8n-node dev",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease",
+    "test": "npm run build && node --test tests/*.test.cjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.json",
+    "dist/**/*.png",
+    "examples",
+    "RELEASING.md"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/PostzenApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Postzen/Postzen.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.47.1",
+    "eslint": "9.32.0",
+    "prettier": "3.6.2",
+    "release-it": "^19.0.4",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/JesseEisenbart/n8n-nodes-postzen/issues"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
