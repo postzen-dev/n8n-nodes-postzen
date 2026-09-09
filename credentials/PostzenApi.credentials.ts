@@ -8,7 +8,7 @@ import type {
 export class PostzenApi implements ICredentialType {
 	name = 'postzenApi';
 	displayName = 'PostZen API';
-	documentationUrl = 'https://github.com/JesseEisenbart/n8n-nodes-postzen#credentials';
+	documentationUrl = 'https://github.com/postzen-dev/n8n-nodes-postzen#credentials';
 	icon = 'file:../nodes/Postzen/postzen.png' as const;
 	properties: INodeProperties[] = [
 		{

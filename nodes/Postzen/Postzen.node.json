@@ -6,12 +6,12 @@
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://github.com/JesseEisenbart/n8n-nodes-postzen#credentials"
+				"url": "https://github.com/postzen-dev/n8n-nodes-postzen#credentials"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://github.com/JesseEisenbart/n8n-nodes-postzen"
+				"url": "https://github.com/postzen-dev/n8n-nodes-postzen"
 			}
 		]
 	}

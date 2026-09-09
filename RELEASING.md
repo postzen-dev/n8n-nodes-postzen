@@ -4,7 +4,7 @@ This package is prepared for review; it is not currently verified. Verification 
 
 ## Public repository
 
-The package metadata is configured for `JesseEisenbart/n8n-nodes-postzen`. Create that **public** GitHub repository from this standalone directory, or update the repository URL and README links if you choose a different owner/name. Keep the private PostZen monorepo separate. Include source, package-lock.json, MIT license, README, examples, and both workflows.
+The package lives in the public `postzen-dev/n8n-nodes-postzen` GitHub repository. Keep the private PostZen monorepo separate. Include source, package-lock.json, MIT license, README, examples, and both workflows.
 
 Check that the npm publisher and GitHub maintainer identities match. The scaffold detected Jesse Eisenbart as the author; confirm the author details in package.json before publishing.
 
@@ -15,7 +15,7 @@ For a new npm package, first publication may require a granular npm access token
 The first release still runs in GitHub Actions and includes provenance. After it exists on npm, open the package settings → Trusted Publishers and configure:
 
 - Provider: GitHub Actions
-- Repository owner: `JesseEisenbart`
+- Repository owner: `postzen-dev`
 - Repository name: `n8n-nodes-postzen`
 - Workflow filename: `publish.yml`
 - Environment: blank (the workflow doesn't specify one)

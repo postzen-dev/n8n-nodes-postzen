@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JesseEisenbart/n8n-nodes-postzen.git"
+    "url": "https://github.com/postzen-dev/n8n-nodes-postzen.git"
   },
   "scripts": {
     "build": "n8n-node build",
@@ -54,7 +54,7 @@
     "n8n-workflow": "*"
   },
   "bugs": {
-    "url": "https://github.com/JesseEisenbart/n8n-nodes-postzen/issues"
+    "url": "https://github.com/postzen-dev/n8n-nodes-postzen/issues"
   },
   "engines": {
     "node": ">=24.0.0"
