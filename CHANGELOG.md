@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0 (unreleased)
+## 0.1.0 (2026-09-16)
 
 - Post CRUD with drafts, immediate publishing, schedules, and queues.
 - Profile CRUD, connected account lists/disconnection, and media upload URLs.
